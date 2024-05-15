@@ -77,10 +77,11 @@ const styles = StyleSheet.create({
     width:"90%"
   },
   header: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: "bold",
     color: "#045CB4",
-    marginLeft: 24
+    marginLeft: 24,
+    fontFamily:"itim",
   },
   title: {
     fontSize: 24,
