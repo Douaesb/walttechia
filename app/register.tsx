@@ -8,7 +8,7 @@ import {
   View,
   Image,
 } from "react-native";
-import { Link} from 'expo-router';
+import { Link } from "expo-router";
 
 export default function LoginScreen() {
   return (
@@ -33,24 +33,34 @@ export default function LoginScreen() {
       </View>
 
       <View style={styles.bottom}>
-        <Text style={styles.title}>Login to your account</Text>
-        <Text style={styles.label}>Mobile Number</Text>
-        <TextInput style={styles.input} placeholder="+212 XXXXXXXXX"  placeholderTextColor="#999"/>
-        <Text style={styles.label}>Password</Text>
+        <Text style={styles.title}>Create Account</Text>
+        <Text style={styles.label}>Name</Text>
         <TextInput
           style={styles.input}
-          placeholder="Enter your password" placeholderTextColor="#999"
+          placeholder="e.g John Doe"
+          placeholderTextColor="#999"
+        />
+        <Text style={styles.label}>Mobile Number</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="+212 XXXXXXXXX"
+          placeholderTextColor="#999"
+        />
+        <Text style={styles.label}>Email</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your email"
+          placeholderTextColor="#999"
           secureTextEntry={true}
         />
-        <Image
-            source={require("../assets/images/eye.png")}
-            style={styles.icon}
-          />
-        <Text>Don't have an account ? <Link style={styles.span} href={'register'}>Register here</Link> </Text>
+        <Text >
+          Already have an account ?{" "}
+          <Link style={styles.span} href={"login"}>login to your account</Link>{" "}
+        </Text>
       </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Link href="OTP" style={styles.buttonText}>Continue</Link>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -70,36 +80,38 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center",
     backgroundColor: "white",
-    
   },
   bottom: {
     flex: 1,
     flexDirection: "column",
     backgroundColor: "white",
-    width:"90%"
+    width: "90%",
   },
   header: {
     fontSize: 25,
     fontWeight: "bold",
     color: "#045CB4",
     marginLeft: 24,
-    fontFamily:"itim",
+    fontFamily: "itim",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   label: {
     fontSize: 16,
     marginBottom: 10,
+  },
+  span: {
+    textDecorationLine: "underline",
   },
   input: {
     height: 50,
     borderColor: "#E1E3ED",
     borderWidth: 1,
     borderRadius: 5,
-    marginBottom: 20,
+    marginBottom: 10,
     paddingHorizontal: 10,
   },
   button: {
@@ -108,13 +120,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
     marginBottom: 50,
-    width:"90%"
+    width: "90%",
   },
   buttonText: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
   },
   image: {
     width: 150,
@@ -125,12 +137,9 @@ const styles = StyleSheet.create({
   icon: {
     width: 20,
     height: 20,
-    position: "absolute", 
+    position: "absolute",
     right: 12,
     top: "57%",
     transform: [{ translateY: -10 }],
-  },
-  span: {
-    textDecorationLine: "underline",
   },
 });
