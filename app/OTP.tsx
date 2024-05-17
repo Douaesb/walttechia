@@ -121,7 +121,9 @@ export default function LoginScreen() {
         </View>
       </View>
       <TouchableOpacity style={styles.button}>
-      <Link href="password" style={styles.buttonText}>Done</Link>
+      {/* <Link href="password" style={styles.buttonText}>Done</Link> */}
+      <Link href="home" style={styles.buttonText}>Done</Link>
+
         {/* <Text style={styles.buttonText}>Done</Text> */}
       </TouchableOpacity>
     </View>
