@@ -66,7 +66,9 @@ export default function LoginScreen() {
         </Text>
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Login</Text>
+        {/* <Text style={styles.buttonText}>Login</Text> */}
+        <Link href='defaultW' style={styles.buttonText}>Login</Link>
+
       </TouchableOpacity>
 
       <Modal
