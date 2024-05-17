@@ -7,8 +7,8 @@ import * as Font from 'expo-font';
 
 async function loadFonts() {
   await Font.loadAsync({
-    'INKNUTANTIQUA': require('../../assets/fonts/inknutanqua.ttf'),
-    'itim': require('../../assets/fonts/itim.ttf'),
+    'INKNUTANTIQUA': require('../assets/fonts/inknutanqua.ttf'),
+    'itim': require('../assets/fonts/itim.ttf'),
 
   });
 }
@@ -19,7 +19,7 @@ export default function TabOneScreen() {
     <View style={styles.container}>
       <Link href='login'>
       <Image
-        source={require('../../assets/images/WalletW.png')}
+        source={require('../assets/images/WalletW.png')}
         style={styles.image}
       />
       </Link>
@@ -28,7 +28,7 @@ export default function TabOneScreen() {
         <Circle cx="520" cy="160" r="30" fill="#8CC404" />
       </Svg>
       <Text style={styles.title}>WALTTECHIA</Text>
-      <View lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      {/* <View lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
     </View>
   );
 }
