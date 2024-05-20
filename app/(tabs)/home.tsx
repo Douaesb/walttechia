@@ -17,7 +17,7 @@ export default function HomeScreen() {
         <View style={styles.cnt}>
           <View style={styles.leftContainer}>
             <Image
-              source={require("../assets/images/prfl1.png")}
+              source={require("../../assets/images/prfl1.png")}
               style={styles.circleImage}
             />
             <View style={styles.name}>
@@ -28,7 +28,7 @@ export default function HomeScreen() {
           <View style={styles.rightContainer}>
             <TouchableOpacity>
               <Image
-                source={require("../assets/images/Usericn.png")}
+                source={require("../../assets/images/Usericn.png")}
                 style={styles.profileIcon}
               />
             </TouchableOpacity>
@@ -45,21 +45,21 @@ export default function HomeScreen() {
         <View style={styles.div}>
           <View style={styles.dist}>
             <Image
-              source={require("../assets/images/cashin.png")}
+              source={require("../../assets/images/cashin.png")}
               style={styles.img}
             />
             <Text style={styles.divide}>Cash in</Text>
           </View>
           <View style={styles.dist}>
             <Image
-              source={require("../assets/images/cashout.png")}
+              source={require("../../assets/images/cashout.png")}
               style={styles.img}
             />
             <Text style={styles.divide}>Cash out</Text>
           </View>
           <View style={styles.dist}>
             <Image
-              source={require("../assets/images/transfer.png")}
+              source={require("../../assets/images/transfer.png")}
               style={styles.img}
             />
             <Text style={styles.divide}>Transfer</Text>
@@ -71,35 +71,35 @@ export default function HomeScreen() {
         <View style={styles.contacts}>
           <View style={styles.name}>
             <Image
-              source={require("../assets/images/pluss.png")}
+              source={require("../../assets/images/pluss.png")}
               style={styles.circleImage}
             />
             <Text style={styles.span}>Add</Text>
           </View>
           <View style={styles.name}>
             <Image
-              source={require("../assets/images/prfl1.png")}
+              source={require("../../assets/images/prfl1.png")}
               style={styles.circleImage}
             />
             <Text style={styles.span}>Douae</Text>
           </View>
           <View style={styles.name}>
             <Image
-              source={require("../assets/images/prfl2.png")}
+              source={require("../../assets/images/prfl2.png")}
               style={styles.circleImage}
             />
             <Text style={styles.span}>Hanae</Text>
           </View>
           <View style={styles.name}>
             <Image
-              source={require("../assets/images/prfl3.png")}
+              source={require("../../assets/images/prfl3.png")}
               style={styles.circleImage}
             />
             <Text style={styles.span}>Dounia</Text>
           </View>
           <View style={styles.name}>
             <Image
-              source={require("../assets/images/prfl1.png")}
+              source={require("../../assets/images/prfl1.png")}
               style={styles.circleImage}
             />
             <Text style={styles.span}>Imane</Text>
@@ -113,7 +113,7 @@ export default function HomeScreen() {
           <View style={styles.bottom2}>
             <View style={styles.separator}>
               <Image
-                source={require("../assets/images/Wallmart.png")}
+                source={require("../../assets/images/Wallmart.png")}
                 style={styles.transImage}
               />
               <View style={styles.between}>
@@ -123,15 +123,13 @@ export default function HomeScreen() {
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.price}>-$35.32</Text>
-                  <Image
-                    source={require("../assets/images/rightarr.png")}
-                  />
+                  <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
             </View>
             <View style={styles.separator}>
               <Image
-                source={require("../assets/images/Netflix.png")}
+                source={require("../../assets/images/Netflix.png")}
                 style={styles.transImage}
               />
               <View style={styles.between}>
@@ -141,15 +139,13 @@ export default function HomeScreen() {
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.priceG}>+$430.00</Text>
-                  <Image
-                    source={require("../assets/images/rightarr.png")}
-                  />
+                  <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
             </View>
             <View style={styles.separator}>
               <Image
-                source={require("../assets/images/Wallmart.png")}
+                source={require("../../assets/images/Wallmart.png")}
                 style={styles.transImage}
               />
               <View style={styles.between}>
@@ -159,20 +155,13 @@ export default function HomeScreen() {
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.price}>-$35.32</Text>
-                  <Image
-                    source={require("../assets/images/rightarr.png")}
-                  />
+                  <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
             </View>
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.button}>
-        <Link href="home" style={styles.buttonText}>
-          Done
-        </Link>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -185,6 +174,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     backgroundColor: "#045CB4",
+    paddingTop: 45,
   },
   cnt: {
     flexDirection: "row",
@@ -353,12 +343,12 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
   },
-  price:{
+  price: {
     fontSize: 18,
-    color: "#B83232"
+    color: "#B83232",
   },
-  priceG:{
+  priceG: {
     fontSize: 18,
-    color: "#289B4F"
-  }
+    color: "#289B4F",
+  },
 });

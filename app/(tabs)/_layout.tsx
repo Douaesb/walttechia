@@ -21,23 +21,25 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // headerShown: useClientOnlyValue(false, true),
+        tabBarInactiveTintColor: 'white',
+        tabBarActiveTintColor: '#8CC404',
+        headerShown: useClientOnlyValue(false, false),
+        tabBarStyle: { backgroundColor: '#045CB4' },
       }}>
-      {/* <Tabs.Screen
-        name="index"
+      <Tabs.Screen
+        name="home"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'home',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="history"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'History',
+          tabBarIcon: ({ color }) => <TabBarIcon name="history" color={color} />,
         }}
-      /> */}
+      />
     </Tabs>
   );
 }

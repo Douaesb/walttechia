@@ -7,7 +7,7 @@ export default function HistoryScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Transaction History</Text>
       <View style={styles.transaction}>
-        <Image source={require('../assets/images/prfl1.png')} style={styles.icon} />
+        <Image source={require('../../assets/images/prfl1.png')} style={styles.icon} />
         <View style={styles.details}>
           <Text style={styles.name}>Transaction Name</Text>
           <Text style={styles.date}>Date</Text>
@@ -15,7 +15,7 @@ export default function HistoryScreen() {
         <Text style={styles.amount}>$100.00</Text>
       </View>
       <View style={styles.transaction}>
-        <Image source={require('../assets/images/prfl1.png')} style={styles.icon} />
+        <Image source={require('../../assets/images/prfl1.png')} style={styles.icon} />
         <View style={styles.details}>
           <Text style={styles.name}>Transaction Name</Text>
           <Text style={styles.date}>Date</Text>
@@ -23,7 +23,7 @@ export default function HistoryScreen() {
         <Text style={styles.amount}>$100.00</Text>
       </View>
       <View style={styles.transaction}>
-        <Image source={require('../assets/images/prfl1.png')} style={styles.icon} />
+        <Image source={require('../../assets/images/prfl1.png')} style={styles.icon} />
         <View style={styles.details}>
           <Text style={styles.name}>Transaction Name</Text>
           <Text style={styles.date}>Date</Text>
@@ -31,7 +31,7 @@ export default function HistoryScreen() {
         <Text style={styles.amount}>$100.00</Text>
       </View>
       <View style={styles.transaction}>
-        <Image source={require('../assets/images/prfl1.png')} style={styles.icon} />
+        <Image source={require('../../assets/images/prfl1.png')} style={styles.icon} />
         <View style={styles.details}>
           <Text style={styles.name}>Transaction Name</Text>
           <Text style={styles.date}>Date</Text>
