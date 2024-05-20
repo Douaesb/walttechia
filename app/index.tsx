@@ -4,6 +4,7 @@ import Svg, { Circle } from 'react-native-svg';
 import { useNavigation } from '@react-navigation/native'; 
 import { Link, Tabs } from 'expo-router';
 import * as Font from 'expo-font';
+import { ScreenStackHeaderSubview } from 'react-native-screens';
 
 async function loadFonts() {
   await Font.loadAsync({
@@ -28,7 +29,7 @@ export default function TabOneScreen() {
         <Circle cx="520" cy="160" r="30" fill="#8CC404" />
       </Svg>
       <Text style={styles.title}>WALTTECHIA</Text>
-      {/* <View lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
+      {/* <View lightColor="#eee" darkColor="rgba(255,25:5,255,0.1)" /> */}
     </View>
   );
 }
