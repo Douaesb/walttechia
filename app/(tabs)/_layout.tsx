@@ -21,10 +21,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarInactiveTintColor: 'white',
-        tabBarActiveTintColor: '#8CC404',
+        tabBarInactiveTintColor: '#61636B',
+        tabBarActiveTintColor: '#045CB4',
+        // tabBarActiveBackgroundColor: '#045CB4',
         headerShown: useClientOnlyValue(false, false),
-        tabBarStyle: { backgroundColor: '#045CB4' },
+        tabBarStyle: { backgroundColor: 'white',borderTopWidth:2, borderTopColor:'#E1E3ED' },
       }}>
       <Tabs.Screen
         name="home"
@@ -38,6 +39,20 @@ export default function TabLayout() {
         options={{
           title: 'History',
           tabBarIcon: ({ color }) => <TabBarIcon name="history" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="qrcode"
+        options={{
+          title: 'Qrcode',
+          tabBarIcon: ({ color }) => <TabBarIcon name="qrcode" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="more"
+        options={{
+          title: 'More',
+          tabBarIcon: ({ color }) => <TabBarIcon name="bars" color={color} />,
         }}
       />
     </Tabs>

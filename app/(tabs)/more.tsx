@@ -7,203 +7,146 @@ import {
   Text,
   View,
   Image,
-  ScrollView,
 } from "react-native";
 import { Link } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
 
-export default function HistoryScreen() {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.bottom}>
-        <Text style={styles.title}>History</Text>
-        <ScrollView contentContainerStyle={styles.scrollContainer}>
-
         <View>
           <View style={styles.divc}>
-            <Ionicons
-              style={styles.search}
-              name="search"
-              size={28}
-              color="black"
-            />
-            <TextInput
-              style={styles.searchBar}
-              placeholder="Search..."
-              placeholderTextColor="#999"
-            />
-            <TouchableOpacity style={styles.filterButton}>
-              <Ionicons name="filter" size={32} color="black" />
-
-              {/* <TabBarIcon name="filter" size={20} color="#fff" /> */}
-              <Text style={styles.filterText}>Filter</Text>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.divc}>
-            <Text style={styles.sp}>Today</Text>
+            <Text style={styles.title}>More</Text>
           </View>
           <View style={styles.bottom2}>
             <View style={styles.separator}>
               <Image
-                source={require("../../assets/images/Wallmart.png")}
+                source={require("../../assets/images/charge.png")}
                 style={styles.transImage}
               />
               <View style={styles.between}>
                 <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Today 12:32</Text>
+                  <Text style={styles.tit}>Charge wallet</Text>
                 </View>
                 <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
                   <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
             </View>
             <View style={styles.separator}>
               <Image
-                source={require("../../assets/images/Netflix.png")}
+                source={require("../../assets/images/wtw.png")}
                 style={styles.transImage}
               />
               <View style={styles.between}>
                 <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Yesterday 02:12</Text>
+                  <Text style={styles.tit}>Wallet to Wallet</Text>
                 </View>
                 <View style={styles.row}>
-                  <Text style={styles.priceG}>+$430.00</Text>
                   <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
             </View>
             <View style={styles.separator}>
               <Image
-                source={require("../../assets/images/Wallmart.png")}
+                source={require("../../assets/images/cashin2.png")}
                 style={styles.transImage}
               />
               <View style={styles.between}>
                 <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Dec 24 13:53</Text>
+                  <Text style={styles.tit}>Cash in </Text>
                 </View>
                 <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
+                  <Image source={require("../../assets/images/rightarr.png")} />
+                </View>
+              </View>
+            </View>
+            <View style={styles.separator}>
+              <Image
+                source={require("../../assets/images/cashout2.png")}
+                style={styles.transImage}
+              />
+              <View style={styles.between}>
+                <View style={styles.next}>
+                  <Text style={styles.tit}>Cash out </Text>
+                </View>
+                <View style={styles.row}>
+                  <Image source={require("../../assets/images/rightarr.png")} />
+                </View>
+              </View>
+            </View>
+            <View style={styles.separator2}>
+              <Image
+                source={require("../../assets/images/stats.png")}
+                style={styles.transImage}
+              />
+              <View style={styles.between}>
+                <View style={styles.next}>
+                  <Text style={styles.tit}>Stats</Text>
+                </View>
+                <View style={styles.row}>
+                  <Image source={require("../../assets/images/rightarr.png")} />
+                </View>
+              </View>
+            </View>
+            <View style={styles.separator}>
+              <Image
+                source={require("../../assets/images/upgrade.png")}
+                style={styles.transImage}
+              />
+              <View style={styles.between}>
+                <View style={styles.next}>
+                  <Text style={styles.tit}>Upgrade wallet</Text>
+                </View>
+                <View style={styles.row}>
+                  <Image source={require("../../assets/images/rightarr.png")} />
+                </View>
+              </View>
+            </View>
+            <View style={styles.separator}>
+              <Image
+                source={require("../../assets/images/help.png")}
+                style={styles.transImage}
+              />
+              <View style={styles.between}>
+                <View style={styles.next}>
+                  <Text style={styles.tit}>Help</Text>
+                </View>
+                <View style={styles.row}>
+                  <Image source={require("../../assets/images/rightarr.png")} />
+                </View>
+              </View>
+            </View>
+            <View style={styles.separator}>
+              <Image
+                source={require("../../assets/images/contact.png")}
+                style={styles.transImage}
+              />
+              <View style={styles.between}>
+                <View style={styles.next}>
+                  <Text style={styles.tit}>Contact us</Text>
+                </View>
+                <View style={styles.row}>
+                  <Image source={require("../../assets/images/rightarr.png")} />
+                </View>
+              </View>
+            </View>
+            <View style={styles.leftContainer}>
+              <Image
+                source={require("../../assets/images/about.png")}
+                style={styles.transImage}
+              />
+              <View style={styles.between}>
+                <View style={styles.next}>
+                  <Text style={styles.tit}>About</Text>
+                </View>
+                <View style={styles.row}>
                   <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
             </View>
           </View>
-          <View style={styles.divc}>
-            <Text style={styles.sp}>Yesterday</Text>
-          </View>
-          <View style={styles.bottom2}>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Today 12:32</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Netflix.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Yesterday 02:12</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.priceG}>+$430.00</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Dec 24 13:53</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-          </View>
-          <View style={styles.divc}>
-            <View>
-              <Text style={styles.time}>Thursday</Text>
-              <Text style={styles.sp}>December 29, 2022</Text>
-            </View>
-          </View>
-          <View style={styles.separator}>
-            <Image
-              source={require("../../assets/images/Wallmart.png")}
-              style={styles.transImage}
-            />
-            <View style={styles.between}>
-              <View style={styles.next}>
-                <Text style={styles.tit}>Wallmart</Text>
-                <Text style={styles.time}>Dec 24 13:53</Text>
-              </View>
-              <View style={styles.row}>
-                <Text style={styles.price}>-$35.32</Text>
-                <Image source={require("../../assets/images/rightarr.png")} />
-              </View>
-            </View>
-          </View>
-          <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Dec 24 13:53</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Dec 24 13:53</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
         </View>
-
-        </ScrollView>
-
       </View>
     </View>
   );
@@ -218,9 +161,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: "#045CB4",
     paddingTop: 45,
-  },
-  scrollContainer: {
-    paddingVertical: 20,
   },
   cnt: {
     flexDirection: "row",
@@ -242,8 +182,8 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   transImage: {
-    width: 45,
-    height: 45,
+    width: 35,
+    height: 35,
     borderRadius: 20,
     marginRight: 10,
     // backgroundColor: "rgba(140, 196, 4, 0.5)",
@@ -268,21 +208,7 @@ const styles = StyleSheet.create({
     height: 30,
     resizeMode: "contain",
   },
-  top: {
-    flex: 1.5,
-    flexDirection: "column",
-    gap: 25,
-    alignItems: "center",
-    backgroundColor: "#045CB4",
-    marginTop: 15,
-  },
-  solde: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#045CB4",
-    marginTop: 10,
-  },
+
   bottom: {
     flex: 2,
     flexDirection: "column",
@@ -302,7 +228,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: "bold",
-    marginLeft: 10,
+    marginLeft:10,
+    textAlign:"center",
   },
   tit: {
     fontSize: 16,
@@ -318,7 +245,8 @@ const styles = StyleSheet.create({
   divc: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 20,
+    paddingTop: 10,
+    paddingBottom:20,
   },
   divide: {
     color: "white",
@@ -344,10 +272,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   sp: {
-    color: "#78838D",
+    color: "#BAC2C7",
     textAlign: "center",
     marginBottom: 20,
-    fontSize: 22,
   },
   span: {
     fontWeight: "medium",
@@ -370,9 +297,16 @@ const styles = StyleSheet.create({
   },
   separator: {
     borderBottomWidth: 2,
-    paddingBottom: 6,
+    paddingBottom: 14,
     borderBottomColor: "#EDEFF6",
     flexDirection: "row",
+  },
+  separator2: {
+    borderBottomWidth: 8,
+    paddingBottom: 24,
+    borderBottomColor: "#EDEFF6",
+    flexDirection: "row",
+    marginBottom:20,
   },
   between: {
     justifyContent: "space-between",
@@ -384,6 +318,8 @@ const styles = StyleSheet.create({
   },
   next: {
     flex: 1,
+    textAlign: "center",
+    justifyContent:"center"
   },
   row: {
     flexDirection: "row",
@@ -397,41 +333,5 @@ const styles = StyleSheet.create({
   priceG: {
     fontSize: 18,
     color: "#289B4F",
-  },
-  container2: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-  },
-  searchBar: {
-    flex: 1,
-    height: 40,
-    borderColor: "#ddd",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    backgroundColor: "#fff",
-    paddingLeft: 35,
-  },
-  filterButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginLeft: 10,
-    paddingHorizontal: 15,
-    height: 40,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#ddd",
-  },
-  filterText: {
-    color: "black",
-    marginLeft: 5,
-  },
-  search: {
-    position: "absolute",
-    top: 25,
-    left: 6,
-    zIndex: 5,
   },
 });
