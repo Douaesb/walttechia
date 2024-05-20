@@ -17,7 +17,6 @@ export default function HistoryScreen() {
     <View style={styles.container}>
       <View style={styles.bottom}>
         <Text style={styles.title}>History</Text>
-        <ScrollView contentContainerStyle={styles.scrollContainer}>
 
         <View>
           <View style={styles.divc}>
@@ -39,6 +38,7 @@ export default function HistoryScreen() {
               <Text style={styles.filterText}>Filter</Text>
             </TouchableOpacity>
           </View>
+          <ScrollView contentContainerStyle={styles.scrollContainer}>
 
           <View style={styles.divc}>
             <Text style={styles.sp}>Today</Text>
@@ -200,9 +200,9 @@ export default function HistoryScreen() {
                 </View>
               </View>
             </View>
+        </ScrollView>
         </View>
 
-        </ScrollView>
 
       </View>
     </View>
