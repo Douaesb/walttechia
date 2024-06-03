@@ -137,9 +137,12 @@ export default function HomeScreen() {
                 style={styles.transImage}
               />
               <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>About</Text>
-                </View>
+                <TouchableOpacity style={styles.next}>
+                  <Link href="about" style={styles.tit}>
+                    About
+                  </Link>
+                </TouchableOpacity>
+
                 <View style={styles.row}>
                   <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
@@ -228,8 +231,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: "bold",
-    marginLeft:10,
-    textAlign:"center",
+    marginLeft: 10,
+    textAlign: "center",
   },
   tit: {
     fontSize: 16,
@@ -246,7 +249,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingTop: 10,
-    paddingBottom:20,
+    paddingBottom: 20,
   },
   divide: {
     color: "white",
@@ -306,7 +309,7 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
     borderBottomColor: "#EDEFF6",
     flexDirection: "row",
-    marginBottom:20,
+    marginBottom: 20,
   },
   between: {
     justifyContent: "space-between",
@@ -319,7 +322,7 @@ const styles = StyleSheet.create({
   next: {
     flex: 1,
     textAlign: "center",
-    justifyContent:"center"
+    justifyContent: "center",
   },
   row: {
     flexDirection: "row",

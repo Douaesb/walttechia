@@ -27,11 +27,14 @@ export default function HomeScreen() {
           </View>
           <View style={styles.rightContainer}>
             <TouchableOpacity>
+            <Link href="profile">
               <Image
                 source={require("../../assets/images/Usericn.png")}
                 style={styles.profileIcon}
               />
+            </Link>
             </TouchableOpacity>
+
           </View>
         </View>
 
@@ -88,7 +91,7 @@ export default function HomeScreen() {
               source={require("../../assets/images/prfl2.png")}
               style={styles.circleImage}
             />
-            <Text style={styles.span}>Hanae</Text>
+            <Text style={styles.span}>Hanaa</Text>
           </View>
           <View style={styles.name}>
             <Image
