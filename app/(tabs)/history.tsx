@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Svg, { Circle, Ellipse } from "react-native-svg";
 import {
   StyleSheet,
@@ -8,13 +8,16 @@ import {
   View,
   Image,
   ScrollView,
+  Modal,
 } from "react-native";
 import { Link } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 
 export default function HistoryScreen() {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [mobileNumber, setMobileNumber] = useState("");
   return (
-    <View style={styles.container}>
+    <View style={modalVisible ? styles.overlay : styles.container}>
       <View style={styles.bottom}>
         <Text style={styles.title}>History</Text>
 
@@ -32,18 +35,142 @@ export default function HistoryScreen() {
               placeholderTextColor="#999"
             />
             <TouchableOpacity style={styles.filterButton}>
-              <Ionicons name="filter" size={32} color="black" />
+              <Ionicons name="options-outline" size={32} color="black" />
 
               {/* <TabBarIcon name="filter" size={20} color="#fff" /> */}
               <Text style={styles.filterText}>Filter</Text>
             </TouchableOpacity>
           </View>
           <ScrollView contentContainerStyle={styles.scrollContainer}>
-
-          <View style={styles.divc}>
-            <Text style={styles.sp}>Today</Text>
-          </View>
-          <View style={styles.bottom2}>
+            <View style={styles.divc}>
+              <Text style={styles.sp}>Today</Text>
+            </View>
+            <View style={styles.bottom2}>
+              <View style={styles.separator}>
+                <Image
+                  source={require("../../assets/images/Wallmart.png")}
+                  style={styles.transImage}
+                />
+                <View style={styles.between}>
+                  <View style={styles.next}>
+                    <Text style={styles.tit}>Wallmart</Text>
+                    <Text style={styles.time}>Today 12:32</Text>
+                  </View>
+                  <TouchableOpacity
+                    style={styles.row}
+                    onPress={() => setModalVisible(true)}
+                  >
+                    <View style={styles.row}>
+                      <Text style={styles.price}>-$35.32</Text>
+                      <Image
+                        source={require("../../assets/images/rightarr.png")}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View style={styles.separator}>
+                <Image
+                  source={require("../../assets/images/Netflix.png")}
+                  style={styles.transImage}
+                />
+                <View style={styles.between}>
+                  <View style={styles.next}>
+                    <Text style={styles.tit}>Wallmart</Text>
+                    <Text style={styles.time}>Yesterday 02:12</Text>
+                  </View>
+                  <View style={styles.row}>
+                    <Text style={styles.priceG}>+$430.00</Text>
+                    <Image
+                      source={require("../../assets/images/rightarr.png")}
+                    />
+                  </View>
+                </View>
+              </View>
+              <View style={styles.separator}>
+                <Image
+                  source={require("../../assets/images/Wallmart.png")}
+                  style={styles.transImage}
+                />
+                <View style={styles.between}>
+                  <View style={styles.next}>
+                    <Text style={styles.tit}>Wallmart</Text>
+                    <Text style={styles.time}>Dec 24 13:53</Text>
+                  </View>
+                  <View style={styles.row}>
+                    <Text style={styles.price}>-$35.32</Text>
+                    <Image
+                      source={require("../../assets/images/rightarr.png")}
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={styles.divc}>
+              <Text style={styles.sp}>Yesterday</Text>
+            </View>
+            <View style={styles.bottom2}>
+              <View style={styles.separator}>
+                <Image
+                  source={require("../../assets/images/Wallmart.png")}
+                  style={styles.transImage}
+                />
+                <View style={styles.between}>
+                  <View style={styles.next}>
+                    <Text style={styles.tit}>Wallmart</Text>
+                    <Text style={styles.time}>Today 12:32</Text>
+                  </View>
+                  <View style={styles.row}>
+                    <Text style={styles.price}>-$35.32</Text>
+                    <Image
+                      source={require("../../assets/images/rightarr.png")}
+                    />
+                  </View>
+                </View>
+              </View>
+              <View style={styles.separator}>
+                <Image
+                  source={require("../../assets/images/Netflix.png")}
+                  style={styles.transImage}
+                />
+                <View style={styles.between}>
+                  <View style={styles.next}>
+                    <Text style={styles.tit}>Wallmart</Text>
+                    <Text style={styles.time}>Yesterday 02:12</Text>
+                  </View>
+                  <View style={styles.row}>
+                    <Text style={styles.priceG}>+$430.00</Text>
+                    <Image
+                      source={require("../../assets/images/rightarr.png")}
+                    />
+                  </View>
+                </View>
+              </View>
+              <View style={styles.separator}>
+                <Image
+                  source={require("../../assets/images/Wallmart.png")}
+                  style={styles.transImage}
+                />
+                <View style={styles.between}>
+                  <View style={styles.next}>
+                    <Text style={styles.tit}>Wallmart</Text>
+                    <Text style={styles.time}>Dec 24 13:53</Text>
+                  </View>
+                  <View style={styles.row}>
+                    <Text style={styles.price}>-$35.32</Text>
+                    <Image
+                      source={require("../../assets/images/rightarr.png")}
+                    />
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={styles.divc}>
+              <View>
+                <Text style={styles.time}>Thursday</Text>
+                <Text style={styles.sp}>December 29, 2022</Text>
+              </View>
+            </View>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/Wallmart.png")}
@@ -52,26 +179,10 @@ export default function HistoryScreen() {
               <View style={styles.between}>
                 <View style={styles.next}>
                   <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Today 12:32</Text>
+                  <Text style={styles.time}>Dec 24 13:53</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Netflix.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Yesterday 02:12</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.priceG}>+$430.00</Text>
                   <Image source={require("../../assets/images/rightarr.png")} />
                 </View>
               </View>
@@ -92,43 +203,6 @@ export default function HistoryScreen() {
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.divc}>
-            <Text style={styles.sp}>Yesterday</Text>
-          </View>
-          <View style={styles.bottom2}>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Today 12:32</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Netflix.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Yesterday 02:12</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.priceG}>+$430.00</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/Wallmart.png")}
@@ -145,66 +219,68 @@ export default function HistoryScreen() {
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.divc}>
-            <View>
-              <Text style={styles.time}>Thursday</Text>
-              <Text style={styles.sp}>December 29, 2022</Text>
-            </View>
-          </View>
-          <View style={styles.separator}>
-            <Image
-              source={require("../../assets/images/Wallmart.png")}
-              style={styles.transImage}
-            />
-            <View style={styles.between}>
-              <View style={styles.next}>
-                <Text style={styles.tit}>Wallmart</Text>
-                <Text style={styles.time}>Dec 24 13:53</Text>
-              </View>
-              <View style={styles.row}>
-                <Text style={styles.price}>-$35.32</Text>
-                <Image source={require("../../assets/images/rightarr.png")} />
-              </View>
-            </View>
-          </View>
-          <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Dec 24 13:53</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/Wallmart.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Wallmart</Text>
-                  <Text style={styles.time}>Dec 24 13:53</Text>
-                </View>
-                <View style={styles.row}>
-                  <Text style={styles.price}>-$35.32</Text>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
-        </ScrollView>
+          </ScrollView>
         </View>
-
-
       </View>
+
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View>
+              <View style={styles.head}>
+                <View style={styles.separator2}>
+                  <Image
+                    source={require("../../assets/images/Wallmart.png")}
+                    style={styles.transImage}
+                  />
+                  <View style={styles.between}>
+                    <View style={styles.next}>
+                      <Text style={styles.tit}>Wallmart</Text>
+                      <Text style={styles.time}>Retailer corporation</Text>
+                    </View>
+                  </View>
+                </View>
+                <TouchableOpacity
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Text style={styles.closeButtonText}>Done</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.priceModalRed}>
+                <Text style={styles.priceD}>-$35.32</Text>
+              </View>
+              <View style={styles.priceModal}>
+                <View style={styles.details}>
+                  <Text style={styles.time}>Today</Text>
+                  <Text style={styles.tit}>December 29, 2022 - 12:32 </Text>
+                </View>
+              </View>
+              <View style={styles.priceModal}>
+                <View style={styles.details}>
+                  <Text style={styles.time}>Transaction no.</Text>
+                  <Text style={styles.tit}>23010412432431</Text>
+                </View>
+                <View style={styles.copy}>
+                  <Feather name="copy" size={24} color="black" style={styles.icon} />
+                </View>
+              </View>
+              <View style={styles.container2}>
+              <Feather name="flag" size={24} color="#B83232" />
+                <Link href="" style={styles.buttonTextRed}>
+                  Report a problem
+                </Link>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -218,6 +294,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: "#045CB4",
     paddingTop: 45,
+  },
+  overlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 45,
+    zIndex: 1,
   },
   scrollContainer: {
     paddingVertical: 20,
@@ -343,6 +432,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+  buttonTextRed: {
+    color: "#B83232",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
   sp: {
     color: "#78838D",
     textAlign: "center",
@@ -372,6 +466,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     paddingBottom: 6,
     borderBottomColor: "#EDEFF6",
+    flexDirection: "row",
+  },
+  separator2: {
+    paddingBottom: 6,
     flexDirection: "row",
   },
   between: {
@@ -434,4 +532,89 @@ const styles = StyleSheet.create({
     left: 6,
     zIndex: 5,
   },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "flex-end",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContent: {
+    width: "100%",
+    height: "45%",
+    backgroundColor: "white",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 20,
+    alignItems: "center",
+    paddingHorizontal: 30,
+    paddingBottom: 35,
+  },
+  head: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "white",
+    width: "100%",
+    height: "1%",
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  scnd: {
+    marginBottom: 40,
+  },
+  closeButtonText: {
+    color: "#045CB4",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  input: {
+    height: 50,
+    borderColor: "#E1E3ED",
+    borderWidth: 1,
+    borderRadius: 5,
+    marginBottom: 20,
+    paddingHorizontal: 10,
+  },
+  priceModalRed: {
+    backgroundColor: "#FFF6F6",
+    height: 65,
+    marginHorizontal: 16,
+    marginVertical: 5,
+    borderRadius: 10,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  priceModal: {
+    height: 65,
+    marginHorizontal: 16,
+    marginVertical: 5,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#EDEFF6",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  priceD: {
+    fontWeight: "bold",
+    fontSize: 24,
+    color: "#B83232",
+  },
+  details: {
+    padding: 10,
+    color: "#535D66",
+    gap: 6,
+  },
+  copy: {
+    padding:18,
+  },
+  icon: {
+    transform: [{ scaleX: -1 }],
+  }
 });
