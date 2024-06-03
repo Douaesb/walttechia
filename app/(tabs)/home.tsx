@@ -27,14 +27,13 @@ export default function HomeScreen() {
           </View>
           <View style={styles.rightContainer}>
             <TouchableOpacity>
-            <Link href="profile">
-              <Image
-                source={require("../../assets/images/Usericn.png")}
-                style={styles.profileIcon}
-              />
-            </Link>
+              <Link href="profile">
+                <Image
+                  source={require("../../assets/images/Usericn.png")}
+                  style={styles.profileIcon}
+                />
+              </Link>
             </TouchableOpacity>
-
           </View>
         </View>
 
@@ -60,13 +59,17 @@ export default function HomeScreen() {
             />
             <Text style={styles.divide}>Cash out</Text>
           </View>
-          <View style={styles.dist}>
-            <Image
-              source={require("../../assets/images/transfer.png")}
-              style={styles.img}
-            />
-            <Text style={styles.divide}>Transfer</Text>
-          </View>
+          <TouchableOpacity>
+            <Link href={"transfer1"}>
+              <View style={styles.dist}>
+                <Image
+                  source={require("../../assets/images/transfer.png")}
+                  style={styles.img}
+                />
+                <Text style={styles.divide}>Transfer</Text>
+              </View>
+            </Link>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.bottom}>
