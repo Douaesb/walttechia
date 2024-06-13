@@ -33,12 +33,12 @@ export default function LoginScreen() {
 
         <View style={styles.between}>
           <Image
-            source={require("../assets/images/prfl2.png")}
+            source={require("../assets/images/prfl1.png")}
             style={styles.transImage}
           />
           <View style={styles.next}>
-            <Text style={styles.tit}>Steve Gates</Text>
-            <Text style={styles.time}>+1-300-555-0161</Text>
+            <Text style={styles.tit}>Ali Ahmed</Text>
+            <Text style={styles.time}>+1-300-555-0119</Text>
           </View>
         </View>
         <View>

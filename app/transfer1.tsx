@@ -55,7 +55,7 @@ export default function HistoryScreen() {
                   style={styles.transImage}
                 />
                   <Link href={"transfer2"}>
-                <View style={styles.between}>
+                <View style={styles.between2} >
                   <View style={styles.next}>
                     <Text style={styles.tit}>Ali Ahmed</Text>
                     <Text style={styles.time}>+1-300-555-0119</Text>
@@ -336,6 +336,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     width: "80%",
+  },
+  between2: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    width: "93%",
   },
   time: {
     color: "#78838D",

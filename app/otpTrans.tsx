@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Svg, { Circle, Ellipse } from "react-native-svg";
+import Svg, { Circle } from "react-native-svg";
 import {
   StyleSheet,
   TextInput,
@@ -14,6 +14,7 @@ export default function LoginScreen() {
   const [otp, setOtp] = useState("");
   const [timer, setTimer] = useState(120); // 2 minutes in seconds
   const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const [isOtpComplete, setIsOtpComplete] = useState(false);
 
   const handleNumberPress = (number: number) => {
     if (otp.length < 6) {
@@ -22,7 +23,9 @@ export default function LoginScreen() {
   };
 
   const handleDeletePress = () => {
-    setOtp(otp.slice(0, -1));
+    if (otp.length > 0) {
+      setOtp(otp.slice(0, -1));
+    }
   };
 
   useEffect(() => {
@@ -35,6 +38,14 @@ export default function LoginScreen() {
       setIsInputDisabled(true);
     }
   }, [timer]);
+
+  useEffect(() => {
+    if (otp.length === 6) {
+      setIsOtpComplete(true);
+    } else {
+      setIsOtpComplete(false);
+    }
+  }, [otp]);
 
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
@@ -59,12 +70,21 @@ export default function LoginScreen() {
         <View>
           <Text style={styles.sp}>Enter six-digit code</Text>
           <TextInput
-            style={styles.otp}
+            style={[
+              styles.otp,
+              isOtpComplete && { borderBottomColor: "#4DA66B" }, 
+            ]}
             value={otp}
             placeholder="XXX-XXX"
             placeholderTextColor="#BAC2C7"
             editable={!isInputDisabled}
           />
+          {isOtpComplete && (
+                <Image
+                  source={require("../assets/images/check.png")}
+                  style={styles.icon}
+                />
+              )}
           <Text style={[styles.span, timer === 0 && styles.resendActive]}>
             {timer > 0 ? `Resend code ${formatTime(timer)}` : "Resend code"}
           </Text>
@@ -121,10 +141,9 @@ export default function LoginScreen() {
         </View>
       </View>
       <TouchableOpacity style={styles.button}>
-      {/* <Link href="password" style={styles.buttonText}>Done</Link> */}
-      <Link href="home" style={styles.buttonText}>Done</Link>
-
-        {/* <Text style={styles.buttonText}>Done</Text> */}
+        <Link href="successTrans" style={styles.buttonText}>
+          Done
+        </Link>
       </TouchableOpacity>
     </View>
   );
@@ -226,11 +245,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   icon: {
-    width: 20,
-    height: 20,
+    width: 30,
+    height: 30,
     position: "absolute",
-    right: 12,
-    top: "57%",
+    right: -18,
+    top: "45%",
     transform: [{ translateY: -10 }],
   },
   span: {
@@ -249,7 +268,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     borderBottomWidth: 2,
     width: 175,
-    textAlign: "center"
+    textAlign: "center",
   },
   count: {
     color: "black",
@@ -257,6 +276,6 @@ const styles = StyleSheet.create({
   },
   resendActive: {
     color: "#045CB4",
-    fontWeight:"bold",
+    fontWeight: "bold",
   },
 });
