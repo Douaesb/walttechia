@@ -1,10 +1,8 @@
 import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Text, View } from "@/components/Themed";
 import Svg, { Circle } from 'react-native-svg';
-import { useNavigation } from '@react-navigation/native'; 
 import { Link, Tabs } from 'expo-router';
 import * as Font from 'expo-font';
-import { ScreenStackHeaderSubview } from 'react-native-screens';
 import React, { useState, useEffect } from 'react';
 
 async function loadFonts() {
@@ -18,39 +16,59 @@ loadFonts();
 export default function TabOneScreen() {
  
   return (
+    <View style={styles.all}>
+
     <View style={styles.container}>
-      <Link href='login'>
       <Image
-        source={require('../assets/images/WalletW.png')}
+        source={require('../assets/images/FailedTrans.png')}
         style={styles.image}
       />
-      </Link>
-      <Svg width="200" height="25" viewBox="0 0 200 200">
-        <Circle cx="650" cy="140" r="60" fill="#8CC404" />
-        <Circle cx="520" cy="160" r="30" fill="#8CC404" />
-      </Svg>
-      <Text style={styles.title}>WALTTECHIA</Text>
-      {/* <View lightColor="#eee" darkColor="rgba(255,25:5,255,0.1)" /> */}
+
     </View>
+    <TouchableOpacity style={styles.button}>
+        <Link href="home" style={styles.buttonText}>
+          Back to home 
+        </Link>
+      </TouchableOpacity>
+    </View>
+    
   );
 }
 
 const styles = StyleSheet.create({
+  all: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    // paddingHorizontal: 20,
+    backgroundColor: "white",
+  },
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#045CB4",
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    letterSpacing:1,
-    fontFamily: "INKNUTANTIQUA"
+    width: "100%",
+    backgroundColor: "#FFF6F6",
+
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 280,
+    height: 300,
     marginVertical: 4,
+  },
+  button: {
+    backgroundColor: "#045CB4",
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginBottom: 50,
+    width: "90%",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
