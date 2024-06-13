@@ -54,6 +54,7 @@ export default function HistoryScreen() {
                   source={require("../assets/images/prfl1.png")}
                   style={styles.transImage}
                 />
+                  <Link href={"transfer2"}>
                 <View style={styles.between}>
                   <View style={styles.next}>
                     <Text style={styles.tit}>Ali Ahmed</Text>
@@ -68,7 +69,9 @@ export default function HistoryScreen() {
                       />
                     </View>
                   </TouchableOpacity>
+
                 </View>
+                  </Link>
               </View>
               <View style={styles.separator}>
                 <Image
@@ -189,7 +192,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "rgba(140, 196, 4, 0.5)",
     marginLeft: 8,
   },
-  transImage: {
+ transImage: {
     width: 45,
     height: 45,
     borderRadius: 20,
