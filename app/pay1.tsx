@@ -1,3 +1,4 @@
+// paiement commerçant 
 import React from "react";
 import Svg, { Circle, Ellipse } from "react-native-svg";
 import {
@@ -16,25 +17,16 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.bottom}>
-        <Text style={styles.title}>Generate Qr code </Text>
-        <View style={styles.amount}>
-          <Text style={styles.sp}>Enter Amount</Text>
-          <TextInput style={styles.otp}
-            placeholder="$00.00"
-            placeholderTextColor="#BAC2C7"
-          />
-        </View>
+        <Text style={styles.title}>Scan Qr code to pay </Text>
         <View>
-        <Link href={"../QrcodeGenerated"}>
-          <View>
+          <View style={styles.new}>
             <Image
-              source={require("../../assets/images/QrCode.png")}
+              source={require("../assets/images/QrCode.png")}
               style={styles.circleImage}
             />
             
           </View>
-        </Link>
-        <Text style={styles.title2}>Click to generate</Text>
+        <Text style={styles.title2}>Click to scan  </Text>
 
           <View style={styles.or}>
             <View  style={styles.orline}></View>
@@ -45,7 +37,7 @@ export default function HomeScreen() {
            
             <TextInput
               style={styles.searchBar}
-              placeholder="enter phone numbxer"
+              placeholder="enter phone number"
               placeholderTextColor="#999"
             />
           </View>
@@ -56,7 +48,7 @@ export default function HomeScreen() {
             <View style={styles.bottom2}>
               <View style={styles.separator}>
                 <Image
-                  source={require("../../assets/images/prfl1.png")}
+                  source={require("../assets/images/prfl1.png")}
                   style={styles.transImage}
                 />
                   <Link href={"pay2"}>
@@ -70,7 +62,7 @@ export default function HomeScreen() {
                   >
                     <View style={styles.row}>
                       <Image
-                        source={require("../../assets/images/rightarr.png")}
+                        source={require("../assets/images/rightarr.png")}
                       />
                     </View>
                   </TouchableOpacity>
@@ -80,7 +72,7 @@ export default function HomeScreen() {
               </View>
               <View style={styles.separator}>
                 <Image
-                  source={require("../../assets/images/prfl2.png")}
+                  source={require("../assets/images/prfl2.png")}
                   style={styles.transImage}
                 />
                 <View style={styles.between}>
@@ -89,13 +81,13 @@ export default function HomeScreen() {
                     <Text style={styles.time}>+1-300-555-0161</Text>
                   </View>
                   <View style={styles.row}>
-                    <Image source={require("../../assets/images/rightarr.png")} />
+                    <Image source={require("../assets/images/rightarr.png")} />
                   </View>
                 </View>
               </View>
               <View style={styles.separator}>
                 <Image
-                  source={require("../../assets/images/prfl3.png")}
+                  source={require("../assets/images/prfl3.png")}
                   style={styles.transImage}
                 />
                 <View style={styles.between}>
@@ -104,7 +96,7 @@ export default function HomeScreen() {
                     <Text style={styles.time}>+1-202-555-0171</Text>
                   </View>
                   <View style={styles.row}>
-                    <Image source={require("../../assets/images/rightarr.png")} />
+                    <Image source={require("../assets/images/rightarr.png")} />
                   </View>
                 </View>
               </View>
@@ -115,7 +107,7 @@ export default function HomeScreen() {
             <View style={styles.bottom2}>
               <View style={styles.separator}>
                 <Image
-                  source={require("../../assets/images/prfl1.png")}
+                  source={require("../assets/images/prfl1.png")}
                   style={styles.transImage}
                 />
                 <View style={styles.between}>
@@ -124,13 +116,13 @@ export default function HomeScreen() {
                     <Text style={styles.time}>+1-300-555-0119</Text>
                   </View>
                   <View style={styles.row}>
-                    <Image source={require("../../assets/images/rightarr.png")} />
+                    <Image source={require("../assets/images/rightarr.png")} />
                   </View>
                 </View>
               </View>
               <View style={styles.separator}>
                 <Image
-                  source={require("../../assets/images/prfl2.png")}
+                  source={require("../assets/images/prfl2.png")}
                   style={styles.transImage}
                 />
                 <View style={styles.between}>
@@ -139,7 +131,7 @@ export default function HomeScreen() {
                     <Text style={styles.time}>+1-300-555-0161 </Text>
                   </View>
                   <View style={styles.row}>
-                    <Image source={require("../../assets/images/rightarr.png")} />
+                    <Image source={require("../assets/images/rightarr.png")} />
                   </View>
                 </View>
               </View>
@@ -193,8 +185,9 @@ const styles = StyleSheet.create({
     width: 100,
     height: 90,
     borderRadius: 20,
-    marginLeft: 140,
-    margin:16
+    marginRight: 10,
+    // backgroundColor: "rgba(140, 196, 4, 0.5)",
+    marginLeft: 8,
   },
  transImage: {
     width: 45,
@@ -261,7 +254,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   title2: {
-    fontSize: 20,
+    fontSize: 24,
     alignItems:"center",
     alignSelf:"center",
     paddingBottom:30
@@ -516,18 +509,6 @@ const styles = StyleSheet.create({
     marginHorizontal:12,
     color:"#78838D",
     fontSize: 16
-  },
-  amount: {
-    paddingTop:30
-  },
-  otp: {
-    fontSize: 40,
-    borderBottomColor: "black",
-    paddingBottom: 10,
-    borderBottomWidth: 2,
-    width: 175,
-    textAlign: "center",
-    alignSelf:"center"
   }
 });
 
