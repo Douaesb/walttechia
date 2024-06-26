@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, TextInput, TouchableOpacity, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  View,
+  Image,
+} from "react-native";
 import { Link } from "expo-router";
 
 export default function LoginScreen() {
@@ -16,100 +23,36 @@ export default function LoginScreen() {
     }
   };
 
-    const handleDeletePress = () => {
-      if (otp.length > 1) {
-        setOtp(otp.slice(0, -1));
-      } else {
-        setOtp("");
-      }
-    };
+  const handleDeletePress = () => {
+    if (otp.length > 1) {
+      setOtp(otp.slice(0, -1));
+    } else {
+      setOtp("");
+    }
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.top}>
         <View>
-          <Text style={styles.header}>Charge wallet</Text>
-        </View>
-
-        <View style={styles.between}>
-          <Image
-            source={require("../assets/images/prfl1.png")}
-            style={styles.transImage}
-          />
-          <View style={styles.next}>
-            <Text style={styles.tit}>Ali Ahmed</Text>
-            <Text style={styles.time}>+1-300-555-0119</Text>
-          </View>
+          <Text style={styles.header}>
+            The wallet 254187563218 will be charged with an amount of
+          </Text>
         </View>
         <View>
-          <Text style={styles.sp}>Enter Amount</Text>
+          <Text style={styles.sp}></Text>
           <TextInput
             style={styles.otp}
             value={otp}
-            placeholder="$00.00"
-            placeholderTextColor="#BAC2C7"
+            placeholder="$1,252.00"
+            placeholderTextColor="black"
             editable={!isInputDisabled}
           />
         </View>
       </View>
-      <View style={styles.bottom}>
-        <View style={styles.gridRow}>
-          {[1, 2, 3].map((number) => (
-            <TouchableOpacity
-              key={number}
-              style={styles.gridItem}
-              onPress={() => handleNumberPress(number)}
-            >
-              <Text style={styles.gridText}>{number}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-        <View style={styles.gridRow}>
-          {[4, 5, 6].map((number) => (
-            <TouchableOpacity
-              key={number}
-              style={styles.gridItem}
-              onPress={() => handleNumberPress(number)}
-            >
-              <Text style={styles.gridText}>{number}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-        <View style={styles.gridRow}>
-          {[7, 8, 9].map((number) => (
-            <TouchableOpacity
-              key={number}
-              style={styles.gridItem}
-              onPress={() => handleNumberPress(number)}
-            >
-              <Text style={styles.gridText}>{number}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-        <View style={styles.gridRow}>
-          <TouchableOpacity
-            style={styles.gridItem}
-            onPress={() => handleNumberPress('.')}
-          >
-            <Text style={styles.gridText}>.</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.gridItem}
-            onPress={() => handleNumberPress(0)}
-          >
-            <Text style={styles.gridText}>0</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.gridItem} onPress={handleDeletePress}>
-            <Image
-              source={require("../assets/images/deleteicn.png")}
-              style={styles.deleteIcon}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
       <TouchableOpacity style={styles.button}>
-        <Link href="charge2" style={styles.buttonText}>
-          Done
+        <Link href="payement" style={styles.buttonText}>
+          Confirm
         </Link>
       </TouchableOpacity>
     </View>
@@ -166,10 +109,11 @@ const styles = StyleSheet.create({
     height: 24,
   },
   header: {
-    fontSize: 30,
+    fontSize: 32,
     fontWeight: "light",
     marginLeft: 24,
-    fontFamily: "itim",
+    // width:"70%"
+    textAlign: "center",
   },
   title: {
     fontSize: 20,
@@ -229,7 +173,7 @@ const styles = StyleSheet.create({
   },
   otp: {
     fontSize: 40,
-    borderBottomColor: "#045CB4",
+    borderBottomColor: "black",
     paddingBottom: 16,
     borderBottomWidth: 2,
     width: 175,
@@ -244,7 +188,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     width: "80%",
-
   },
   transImage: {
     width: 60,
