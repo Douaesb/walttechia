@@ -45,20 +45,29 @@ export default function HomeScreen() {
           </Text>
         </View>
         <View style={styles.div}>
-          <View style={styles.dist}>
-            <Image
-              source={require("../../assets/images/cashin.png")}
-              style={styles.img}
-            />
-            <Text style={styles.divide}>Cash in</Text>
-          </View>
-          <View style={styles.dist}>
-            <Image
-              source={require("../../assets/images/cashout.png")}
-              style={styles.img}
-            />
-            <Text style={styles.divide}>Cash out</Text>
-          </View>
+        <TouchableOpacity>
+            <Link href={"cashin1"}>
+              <View style={styles.dist}>
+                <Image
+                  source={require("../../assets/images/cashin.png")}
+                  style={styles.img}
+                />
+                <Text style={styles.divide}>Cash in </Text>
+              </View>
+            </Link>
+          </TouchableOpacity>
+         
+          <TouchableOpacity>
+            <Link href={"cashout1"}>
+              <View style={styles.dist}>
+                <Image
+                  source={require("../../assets/images/cashout.png")}
+                  style={styles.img}
+                />
+                <Text style={styles.divide}>Cash out</Text>
+              </View>
+            </Link>
+          </TouchableOpacity>
           <TouchableOpacity>
             <Link href={"transfer1"}>
               <View style={styles.dist}>

@@ -19,20 +19,28 @@ export default function HomeScreen() {
             <Text style={styles.title}>More</Text>
           </View>
           <View style={styles.bottom2}>
-            <View style={styles.separator}>
-              <Image
-                source={require("../../assets/images/charge.png")}
-                style={styles.transImage}
-              />
-              <View style={styles.between}>
-                <View style={styles.next}>
-                  <Text style={styles.tit}>Charge wallet</Text>
+            <TouchableOpacity>
+              <Link href={"charge1"}>
+                <View style={styles.separator}>
+                  <Image
+                    source={require("../../assets/images/charge.png")}
+                    style={styles.transImage}
+                  />
+                  <View style={styles.between}>
+                    <View style={styles.next}>
+                      <Text style={styles.tit}>Charge wallet</Text>
+                    </View>
+                    <View style={styles.row}>
+                      <Image
+                        source={require("../../assets/images/rightarr.png")}
+                      />
+                    </View>
+                  </View>
                 </View>
-                <View style={styles.row}>
-                  <Image source={require("../../assets/images/rightarr.png")} />
-                </View>
-              </View>
-            </View>
+              </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"transfer1"}>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/wtw.png")}
@@ -47,6 +55,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"cashin1"}>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/cashin2.png")}
@@ -61,6 +73,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"cashout1"}>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/cashout2.png")}
@@ -75,6 +91,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"profile"}>
             <View style={styles.separator2}>
               <Image
                 source={require("../../assets/images/stats.png")}
@@ -89,6 +109,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"upgrade"}>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/upgrade.png")}
@@ -103,6 +127,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"cashin1"}>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/help.png")}
@@ -117,6 +145,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"cashin1"}>
             <View style={styles.separator}>
               <Image
                 source={require("../../assets/images/contact.png")}
@@ -131,6 +163,10 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Link href={"about"}>
             <View style={styles.leftContainer}>
               <Image
                 source={require("../../assets/images/about.png")}
@@ -148,6 +184,8 @@ export default function HomeScreen() {
                 </View>
               </View>
             </View>
+            </Link>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
